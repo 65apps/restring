@@ -2,17 +2,18 @@ package com.ice.restring;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.AttributeSet;
 import android.view.View;
+
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.test.core.app.ApplicationProvider;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.robolectric.RobolectricTestRunner;
-import org.robolectric.RuntimeEnvironment;
 
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
@@ -65,7 +66,7 @@ public class SupportToolbarTransformerTest {
     }
 
     private Context getContext() {
-        Context context = Mockito.spy(RuntimeEnvironment.application);
+        Context context = Mockito.spy(ApplicationProvider.getApplicationContext());
         Resources resources = Mockito.spy(context.getResources());
 
         doReturn(resources).when(context).getResources();

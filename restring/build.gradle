@@ -11,7 +11,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }
 
@@ -48,6 +48,7 @@ dependencies {
     testImplementation deps.hamcrest
     testImplementation deps.mockito
     testImplementation deps.robolectric
+    testImplementation deps.androidTestCore
 }
 
 apply from: 'publish.gradle'

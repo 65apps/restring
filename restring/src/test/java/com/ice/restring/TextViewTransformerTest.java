@@ -2,18 +2,19 @@ package com.ice.restring;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.test.core.app.ApplicationProvider;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.robolectric.RobolectricTestRunner;
-import org.robolectric.RuntimeEnvironment;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
@@ -90,7 +91,7 @@ public class TextViewTransformerTest {
     }
 
     private Context getContext() {
-        Context context = Mockito.spy(RuntimeEnvironment.application);
+        Context context = Mockito.spy(ApplicationProvider.getApplicationContext());
         Resources resources = Mockito.spy(context.getResources());
 
         doReturn(resources).when(context).getResources();

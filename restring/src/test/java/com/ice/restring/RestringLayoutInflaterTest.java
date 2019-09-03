@@ -4,6 +4,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.test.core.app.ApplicationProvider;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,7 +14,6 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.stubbing.Answer;
 import org.robolectric.RobolectricTestRunner;
-import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
 
 import static org.mockito.ArgumentMatchers.any;
@@ -33,10 +34,10 @@ public class RestringLayoutInflaterTest {
         when(transformerManager.transform(any(), any())).thenAnswer((Answer<View>) invocation ->
                 invocation.getArgument(0)
         );
-        RuntimeEnvironment.application.setTheme(R.style.Theme_AppCompat);
+        ApplicationProvider.getApplicationContext().setTheme(R.style.Theme_AppCompat);
         restringLayoutInflater = new RestringLayoutInflater(
-                LayoutInflater.from(RuntimeEnvironment.application),
-                RuntimeEnvironment.application,
+                LayoutInflater.from(ApplicationProvider.getApplicationContext()),
+                ApplicationProvider.getApplicationContext(),
                 transformerManager,
                 false
         );

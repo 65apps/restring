@@ -1,9 +1,10 @@
 package com.ice.restring;
 
 import android.content.res.Resources;
-import android.support.v7.widget.Toolbar;
 import android.util.AttributeSet;
 import android.view.View;
+
+import androidx.appcompat.widget.Toolbar;
 
 /**
  * A transformer which transforms Toolbar(from support library): it transforms the text set as title.

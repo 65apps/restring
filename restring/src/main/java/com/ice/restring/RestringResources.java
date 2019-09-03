@@ -2,8 +2,9 @@ package com.ice.restring;
 
 import android.content.res.Resources;
 import android.os.Build;
-import android.support.annotation.NonNull;
 import android.text.Html;
+
+import androidx.annotation.NonNull;
 
 /**
  * This is the wrapped resources which will be provided by Restring.

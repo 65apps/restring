@@ -2,11 +2,12 @@ package com.ice.restring;
 
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
-import android.support.design.widget.BottomNavigationView;
 import android.util.AttributeSet;
 import android.util.Pair;
 import android.util.Xml;
 import android.view.View;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;

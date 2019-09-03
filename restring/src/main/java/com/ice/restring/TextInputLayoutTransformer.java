@@ -1,9 +1,10 @@
 package com.ice.restring;
 
 import android.content.res.Resources;
-import android.support.design.widget.TextInputLayout;
 import android.util.AttributeSet;
 import android.view.View;
+
+import com.google.android.material.textfield.TextInputLayout;
 
 class TextInputLayoutTransformer implements ViewTransformerManager.Transformer {
 
