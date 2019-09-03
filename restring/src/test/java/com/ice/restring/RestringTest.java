@@ -1,12 +1,14 @@
 package com.ice.restring;
 
 import android.app.Activity;
-import android.support.design.widget.BottomNavigationView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
+import androidx.test.core.app.ApplicationProvider;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.ice.restring.activity.TestActivity;
 import com.ice.restring.shadow.MyShadowAsyncTask;
 
@@ -15,7 +17,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
-import org.robolectric.RuntimeEnvironment;
 import org.robolectric.android.controller.ActivityController;
 import org.robolectric.annotation.Config;
 
@@ -35,7 +36,7 @@ public class RestringTest {
     @Before
     public void setUp() {
         Restring.init(
-                RuntimeEnvironment.application,
+                ApplicationProvider.getApplicationContext(),
                 new RestringConfig.Builder()
                         .persist(false)
                         .stringsLoader(new MyStringLoader())
@@ -61,8 +62,8 @@ public class RestringTest {
                     assertThat("TextView[hint]", ((TextView) view).getHint().toString(), startsWith(getLanguage()));
                 } else if (view instanceof Toolbar) {
                     assertThat("Toolbar[title]", ((Toolbar) view).getTitle().toString(), startsWith(getLanguage()));
-                } else if (view instanceof android.support.v7.widget.Toolbar) {
-                    assertThat("Toolbar[title]", ((android.support.v7.widget.Toolbar) view).getTitle().toString(), startsWith(getLanguage()));
+                } else if (view instanceof androidx.appcompat.widget.Toolbar) {
+                    assertThat("Toolbar[title]", ((androidx.appcompat.widget.Toolbar) view).getTitle().toString(), startsWith(getLanguage()));
                 } else if (view instanceof BottomNavigationView) {
                     BottomNavigationView bottomNavigationView = (BottomNavigationView) view;
                     int itemCount = bottomNavigationView.getMenu().size();

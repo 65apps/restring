@@ -22,7 +22,7 @@ if (project.hasProperty("android")) {
 
     afterEvaluate {
         javadoc.classpath += files(android.libraryVariants.collect { variant ->
-            variant.javaCompiler.classpath.files
+            variant.javaCompileProvider.get().classpath.files
         })
     }
 } else { // Java libraries

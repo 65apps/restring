@@ -4,13 +4,13 @@ package com.ice.restring.shadow;
 import android.content.res.AssetManager;
 
 import org.robolectric.annotation.Implements;
-import org.robolectric.shadows.ShadowAssetManager;
+import org.robolectric.shadows.ShadowLegacyAssetManager;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 @Implements(AssetManager.class)
-public class MyShadowAssetManager extends ShadowAssetManager {
+public class MyShadowAssetManager extends ShadowLegacyAssetManager {
 
     private Map<Integer, String> resourceEntryNames = new LinkedHashMap<>();
 
